@@ -1,0 +1,21 @@
+﻿@using AngularJS.Models
+
+@model Reservation
+
+<div class="panel panel-primary">
+	<div class="panel-heading">Create Reservation</div>
+	<div class="panel-body">
+		@using (Html.BeginForm("Add", "Home"))
+		{
+			<div class="form-group">
+				@Html.LabelFor(m => m.ClientName)
+				@Html.TextBoxFor(m => m.ClientName, new { @class = "form-control", placeholder = "Enter ClientName" })
+			</div>
+			<div class="form-group">
+				@Html.LabelFor(m=>m.Location)
+				@Html.TextBoxFor(m=>m.Location,new { @class="form-control", placeholder="Enter Location"})
+			</div>
+			<input type="submit" value="Save" class="btn btn-primary"/>
+		}
+	</div>
+</div>

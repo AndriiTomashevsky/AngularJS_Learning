@@ -1,0 +1,11 @@
+﻿@using AngularJS.Models
+
+@model  IEnumerable<Reservation>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+@Html.Partial("Summary", Model)
+@Html.Partial("Editor", new Reservation())
+
