@@ -16,6 +16,13 @@ namespace AngularJS.Models
             new Reservation(){ ReservationId=3,ClientName="Russell",Location="Meeting Room 1"}
         };
 
+        internal Reservation GetReservation(int reservationId)
+        {
+            Reservation reservation = reservations.Find(r => r.ReservationId == reservationId);
+
+            return reservation;
+        }
+
         public static ReservationRepository Singleton()
         {
             return reservationRepository;
@@ -29,7 +36,7 @@ namespace AngularJS.Models
 
         internal void Remove(int reservationId)
         {
-            Reservation deletedReservation = reservations.Find(r => r.ReservationId == reservationId);
+            Reservation deletedReservation = GetReservation(reservationId);
             reservations.Remove(deletedReservation);
         }
 
