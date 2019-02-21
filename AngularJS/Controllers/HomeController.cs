@@ -11,10 +11,6 @@ namespace AngularJS.Controllers
     {
         ReservationRepository reservationRepository = ReservationRepository.Singleton();
 
-        public HomeController()
-        {
-        }
-
         public ActionResult Index()
         {
             return View(reservationRepository.Reservations);
